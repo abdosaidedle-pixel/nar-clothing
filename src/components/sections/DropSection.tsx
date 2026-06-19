@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Bell } from "lucide-react";
-import imgBFW from "@assets/33ef5afe-ec2a-405c-be2f-c4786d17960c_1781286522480.png";
-import imgBTBLW from "@assets/6d2a65d8-3515-4327-8674-8f989f695ad6_1781286536554.png";
-import imgBFFB from "@assets/d3efa852-813a-43f6-bc6e-2a8d2b737f6c_1781286527273.png";
-import imgBTBLBk from "@assets/9d3a0bd0-d738-48f1-be9b-3e9651f9fcc3_1781286532075.png";
+import imgDrop2_1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
+import imgDrop2_2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
+import imgDrop2_3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
+import imgDrop2_4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
 
 const bannerSlides = [
-  { src: imgBFFB,   label: "Born From Fire",   sub: "Black — Drop 001"     },
-  { src: imgBFW,    label: "Born From Fire",   sub: "Off White — Drop 001"  },
-  { src: imgBTBLBk, label: "Born To Be Loud", sub: "Black — Drop 001"      },
-  { src: imgBTBLW,  label: "Born To Be Loud", sub: "White — Drop 001"      },
+  { src: imgDrop2_1, label: "Do You Miss Me?", sub: "Black — Drop 002" },
+  { src: imgDrop2_2, label: "NAR Basic", sub: "Bone White — Drop 002" },
+  { src: imgDrop2_3, label: "Statement Piece", sub: "White — Drop 002" },
+  { src: imgDrop2_4, label: "Love Exam", sub: "Vintage Black — Drop 002" },
 ];
 
 const TARGET_DATE = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
@@ -174,17 +174,17 @@ export default function DropSection() {
               className="flex flex-col gap-4"
             >
               <div className="flex items-center gap-4">
-                <h2 className="font-display text-6xl md:text-8xl uppercase text-foreground">DROP 001</h2>
+                <h2 className="font-display text-6xl md:text-8xl uppercase text-foreground">DROP 002</h2>
                 <span className="bg-primary text-white text-xs font-bold tracking-[0.2em] px-3 py-1.5 uppercase shrink-0 self-start mt-2">
-                  Only 200 Pieces
+                  Limited Pieces
                 </span>
               </div>
               <p className="text-muted-foreground text-sm md:text-base tracking-wide leading-relaxed max-w-md">
-                Born From Fire Collection.<br />
-                This isn't just clothing. It's a statement.<br />
-                For those who know.<br />
+                The New Collection.<br />
+                Wear what they think about.<br />
+                Loud. Clean. Real.<br />
                 <span className="text-foreground/60 italic mt-2 block text-xs tracking-widest uppercase">
-                  We don't follow. We build. We burn.
+                  Miss it — you missed it.
                 </span>
               </p>
             </motion.div>
