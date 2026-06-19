@@ -92,7 +92,10 @@ function ProductCard3D({ product, idx }: { product: typeof products[0]; idx: num
                 c === "Black" ? "#111" :
                 c === "Off White" ? "#E8E4DA" :
                 c === "Deep Red" ? "#8B0000" :
-                c === "White" ? "#F2F2F2" : "#888";
+                c === "White" ? "#F2F2F2" :
+                c === "Bone White" ? "#F5F5DC" :
+                c === "Vintage Black" ? "#2A2A2A" :
+                c === "Burgundy" ? "#800020" : "#888";
               return (
                 <div
                   key={c}
@@ -121,12 +124,12 @@ export default function Collection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-xs tracking-[0.4em] text-primary uppercase mb-3">Drop 001</p>
+            <p className="text-xs tracking-[0.4em] text-primary uppercase mb-3">All Releases</p>
             <h1 className="font-display text-6xl md:text-8xl uppercase leading-tight">
               The Collection.
             </h1>
             <p className="text-muted-foreground mt-4 max-w-lg leading-relaxed text-sm">
-              Limited pieces. Unlimited identity. Every item is part of Drop 001 — once it's gone, it's gone. Click any product to explore, choose your size, and order directly via WhatsApp.
+              Limited pieces. Unlimited identity. Every item is part of a NAR drop — once it's gone, it's gone. Click any product to explore, choose your size, and order directly via WhatsApp.
             </p>
           </motion.div>
         </div>

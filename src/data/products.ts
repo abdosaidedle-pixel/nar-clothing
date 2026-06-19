@@ -5,7 +5,13 @@ import imgBTBLBlack from "@assets/9d3a0bd0-d738-48f1-be9b-3e9651f9fcc3_178128653
 import imgBTBLWhite from "@assets/6d2a65d8-3515-4327-8674-8f989f695ad6_1781286536554.png";
 import imgBlackout from "@assets/WhatsApp_Image_2026-06-12_at_5.33.58_PM_(1)_1781286541601.jpg";
 
-export const WHATSAPP_NUMBER = "201144364349";
+import imgDrop2_1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
+import imgDrop2_2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
+import imgDrop2_3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
+import imgDrop2_4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
+import imgDrop2_5 from "@assets/ec9fc131-3d6d-4079-a384-99851be3fce5_1781347004617.jpg";
+
+export const WHATSAPP_NUMBER = "201024527565";
 
 export interface Product {
   id: number;
@@ -105,6 +111,71 @@ export const products: Product[] = [
     details: ["240 GSM", "100% Cotton", "Oversize Fit", "Screen Print", "Pre-Shrunk", "Heavy Ribbed Neck"],
     description:
       "Basic. Brutal. Real. The cleanest piece in Drop 001. Minimal branding, maximum weight. For those who let the fit speak louder than the print.",
+  },
+  {
+    id: 7,
+    slug: "do-you-miss-me-black",
+    name: "Do You Miss Me?",
+    drop: "Drop 002",
+    tagline: "Do you miss me? A: yes",
+    price: 650,
+    images: [imgDrop2_1],
+    colors: ["Black"],
+    sizes: ["M", "L", "XL", "XXL"],
+    details: ["100% Cotton", "230 GSM", "Premium Oversized", "Screen Print", "Woven Label"],
+    description: "Wear what they think about. 'Do you miss me?' limited drop. Don't sleep on this.",
+  },
+  {
+    id: 8,
+    slug: "nar-basic-bone-white",
+    name: "NAR Basic",
+    drop: "Drop 002",
+    tagline: "NAR Basic — Bone White",
+    price: 650,
+    images: [imgDrop2_2],
+    colors: ["Bone White"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    details: ["100% Cotton", "240 GSM", "Oversized Fit", "High Quality Print Center Chest"],
+    description: "The essential NAR piece. Clean, loud, and real.",
+  },
+  {
+    id: 9,
+    slug: "statement-piece-white",
+    name: "Statement Piece",
+    drop: "Drop 002",
+    tagline: "My Ex Is My Biggest Fan",
+    price: 650,
+    images: [imgDrop2_3],
+    colors: ["White"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    details: ["100% Cotton", "240 GSM", "Boxy Fit", "Front & Back Print"],
+    description: "Say it without saying it. Loud. Clean. Real.",
+  },
+  {
+    id: 10,
+    slug: "love-exam-vintage-black",
+    name: "Love Exam",
+    drop: "Drop 002",
+    tagline: "Love Exam — Vintage Black",
+    price: 650,
+    images: [imgDrop2_4],
+    colors: ["Vintage Black"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    details: ["100% Cotton", "240 GSM", "Oversized Fit", "Front & Back Print"],
+    description: "Do you still think about me? Yes, Every day, Every night, All the time.",
+  },
+  {
+    id: 11,
+    slug: "love-exam-burgundy",
+    name: "Love Exam",
+    drop: "Drop 002",
+    tagline: "Love Exam — Burgundy",
+    price: 650,
+    images: [imgDrop2_5],
+    colors: ["Burgundy"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    details: ["100% Cotton", "240 GSM", "Oversized Fit", "Front & Back Print"],
+    description: "Do you still think about me? Yes, Every day, Every night, All the time.",
   },
 ];
 
