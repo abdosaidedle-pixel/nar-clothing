@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm install && pnpm --filter @workspace/nar-clothing run build",
-  "outputDirectory": "artifacts/nar-clothing/dist/public",
+  "buildCommand": "pnpm install && pnpm run build",
+  "outputDirectory": "dist/public",
   "installCommand": "pnpm install",
   "framework": null,
   "rewrites": [
