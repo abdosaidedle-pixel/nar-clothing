@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import DropSection from "@/components/sections/DropSection";
+import Drop1Section from "@/components/sections/Drop1Section";
 
 export default function DropsPage() {
   return (
@@ -21,6 +22,9 @@ export default function DropsPage() {
             </p>
           </motion.div>
         </div>
+        {/* Drop 001 — The Original Collection (Live) */}
+        <Drop1Section />
+        {/* Drop 002 — New Collection (Countdown) */}
         <DropSection />
         {/* Past Drops */}
         <section className="py-24 border-t border-border/20 container mx-auto px-6 md:px-12">
