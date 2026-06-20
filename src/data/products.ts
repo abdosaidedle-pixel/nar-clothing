@@ -5,11 +5,13 @@ import imgBTBLBlack from "@assets/9d3a0bd0-d738-48f1-be9b-3e9651f9fcc3_178128653
 import imgBTBLWhite from "@assets/6d2a65d8-3515-4327-8674-8f989f695ad6_1781286536554.png";
 import imgBlackout from "@assets/WhatsApp_Image_2026-06-12_at_5.33.58_PM_(1)_1781286541601.jpg";
 
-import imgDrop2_1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
-import imgDrop2_2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
-import imgDrop2_3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
-import imgDrop2_4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
-import imgDrop2_5 from "@assets/ec9fc131-3d6d-4079-a384-99851be3fce5_1781347004617.jpg";
+// Drop 2 - new high-quality product photos (front + back views on same image)
+import imgDrop2_DoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black.jpg";
+import imgDrop2_DoYouMissMeBoneWhite from "@assets/drop2-do-you-miss-me-bone-white.jpg";
+import imgDrop2_NarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white.jpg";
+import imgDrop2_StatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white.jpg";
+import imgDrop2_LoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black.jpg";
+import imgDrop2_LoveExamBurgundy from "@assets/drop2-love-exam-burgundy.jpg";
 
 export const WHATSAPP_NUMBER = "201024527565";
 
@@ -119,8 +121,8 @@ export const products: Product[] = [
     drop: "Drop 002",
     tagline: "Do You Miss Me? — Black",
     price: 700,
-    images: [imgDrop2_1, imgDrop2_3],
-    colors: ["Black", "White"],
+    images: [imgDrop2_DoYouMissMeBlack, imgDrop2_DoYouMissMeBoneWhite],
+    colors: ["Black", "Bone White"],
     sizes: ["M", "L", "XL", "XXL"],
     details: ["100% Cotton", "230 GSM", "Premium Oversized", "Screen Print", "Woven Label"],
     description: "Wear what they think about. 'Do you miss me?' limited drop. Don't sleep on this.",
@@ -130,10 +132,10 @@ export const products: Product[] = [
     slug: "do-you-miss-me-white",
     name: "Do You Miss Me?",
     drop: "Drop 002",
-    tagline: "Do You Miss Me? — White",
+    tagline: "Do You Miss Me? — Bone White",
     price: 700,
-    images: [imgDrop2_3, imgDrop2_1],
-    colors: ["White", "Black"],
+    images: [imgDrop2_DoYouMissMeBoneWhite, imgDrop2_DoYouMissMeBlack],
+    colors: ["Bone White", "Black"],
     sizes: ["M", "L", "XL", "XXL"],
     details: ["100% Cotton", "230 GSM", "Premium Oversized", "Screen Print", "Woven Label"],
     description: "Wear what they think about. 'Do you miss me?' limited drop. Don't sleep on this.",
@@ -145,7 +147,7 @@ export const products: Product[] = [
     drop: "Drop 002",
     tagline: "NAR Basic — Bone White",
     price: 700,
-    images: [imgDrop2_2],
+    images: [imgDrop2_NarBasicBoneWhite],
     colors: ["Bone White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     details: ["100% Cotton", "240 GSM", "Oversized Fit", "High Quality Print Center Chest"],
@@ -156,13 +158,13 @@ export const products: Product[] = [
     slug: "statement-piece-white",
     name: "Statement Piece",
     drop: "Drop 002",
-    tagline: "Statement Piece — White",
+    tagline: "Statement Piece — Bone White",
     price: 700,
-    images: [imgDrop2_3],
-    colors: ["White"],
+    images: [imgDrop2_StatementPieceBoneWhite],
+    colors: ["Bone White"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     details: ["100% Cotton", "240 GSM", "Boxy Fit", "Front & Back Print"],
-    description: "Say it without saying it. Loud. Clean. Real.",
+    description: "My Ex Is My Biggest Fan. Say it without saying it. Loud. Clean. Real.",
   },
   {
     id: 10,
@@ -171,7 +173,7 @@ export const products: Product[] = [
     drop: "Drop 002",
     tagline: "Love Exam — Vintage Black",
     price: 700,
-    images: [imgDrop2_4, imgDrop2_5],
+    images: [imgDrop2_LoveExamVintageBlack, imgDrop2_LoveExamBurgundy],
     colors: ["Vintage Black", "Burgundy"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     details: ["100% Cotton", "240 GSM", "Oversized Fit", "Front & Back Print"],
@@ -184,7 +186,7 @@ export const products: Product[] = [
     drop: "Drop 002",
     tagline: "Love Exam — Burgundy",
     price: 700,
-    images: [imgDrop2_5, imgDrop2_4],
+    images: [imgDrop2_LoveExamBurgundy, imgDrop2_LoveExamVintageBlack],
     colors: ["Burgundy", "Vintage Black"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     details: ["100% Cotton", "240 GSM", "Oversized Fit", "Front & Back Print"],

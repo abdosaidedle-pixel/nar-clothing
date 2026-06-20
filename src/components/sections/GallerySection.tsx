@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
-import img1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
-import img2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
-import img3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
-import img4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
-import img5 from "@assets/ec9fc131-3d6d-4079-a384-99851be3fce5_1781347004617.jpg";
+import img1 from "@assets/drop2-do-you-miss-me-black.jpg";
+import img2 from "@assets/drop2-nar-basic-bone-white.jpg";
+import img3 from "@assets/drop2-statement-piece-bone-white.jpg";
+import img4 from "@assets/drop2-love-exam-vintage-black.jpg";
+import img5 from "@assets/drop2-love-exam-burgundy.jpg";
 
 const galleryItems = [
-  { src: img1, span: "row-span-2", label: "BFF — Deep Red" },
-  { src: img3, span: "row-span-1", label: "BFF — Black" },
-  { src: img4, span: "row-span-1", label: "BFF — Off White" },
-  { src: img2, span: "row-span-2", label: "BFF — Black" },
-  { src: img5, span: "row-span-1", label: "BFF — Off White" },
+  { src: img1, span: "row-span-2", label: "Do You Miss Me? — Black" },
+  { src: img3, span: "row-span-1", label: "Statement Piece — Bone White" },
+  { src: img4, span: "row-span-1", label: "Love Exam — Vintage Black" },
+  { src: img2, span: "row-span-2", label: "NAR Basic — Bone White" },
+  { src: img5, span: "row-span-1", label: "Love Exam — Burgundy" },
 ];
 
 export default function GallerySection() {

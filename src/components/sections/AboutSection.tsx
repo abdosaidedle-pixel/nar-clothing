@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import narLogo from "@assets/703890814_18075540629300719_7161724007546567254_n_1781276971472.jpg";
-import img1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
-import img2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
-import img3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
-import img4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
-import img5 from "@assets/ec9fc131-3d6d-4079-a384-99851be3fce5_1781347004617.jpg";
+import img1 from "@assets/drop2-do-you-miss-me-black.jpg";
+import img2 from "@assets/drop2-nar-basic-bone-white.jpg";
+import img3 from "@assets/drop2-statement-piece-bone-white.jpg";
+import img4 from "@assets/drop2-love-exam-vintage-black.jpg";
+import img5 from "@assets/drop2-love-exam-burgundy.jpg";
 
 const storyLines = [
   "NAR is more than a brand.",

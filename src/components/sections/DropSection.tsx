@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Bell } from "lucide-react";
-import imgDrop2_1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
-import imgDrop2_2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
-import imgDrop2_3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
-import imgDrop2_4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
+import imgDrop2_DoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black.jpg";
+import imgDrop2_NarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white.jpg";
+import imgDrop2_StatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white.jpg";
+import imgDrop2_LoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black.jpg";
 
 const bannerSlides = [
-  { src: imgDrop2_1, label: "Do You Miss Me?", sub: "Black — Drop 002" },
-  { src: imgDrop2_2, label: "NAR Basic", sub: "Bone White — Drop 002" },
-  { src: imgDrop2_3, label: "Statement Piece", sub: "White — Drop 002" },
-  { src: imgDrop2_4, label: "Love Exam", sub: "Vintage Black — Drop 002" },
+  { src: imgDrop2_DoYouMissMeBlack, label: "Do You Miss Me?", sub: "Black — Drop 002" },
+  { src: imgDrop2_NarBasicBoneWhite, label: "NAR Basic", sub: "Bone White — Drop 002" },
+  { src: imgDrop2_StatementPieceBoneWhite, label: "Statement Piece", sub: "Bone White — Drop 002" },
+  { src: imgDrop2_LoveExamVintageBlack, label: "Love Exam", sub: "Vintage Black — Drop 002" },
 ];
 
 const TARGET_DATE = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
