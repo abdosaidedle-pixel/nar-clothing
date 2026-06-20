@@ -18,13 +18,6 @@ import imgDrop2_LoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black
 import imgDrop2_LoveExamBurgundy from "@assets/drop2-love-exam-burgundy.jpg";
 
 const heroImages = [
-  // Drop 1 — Classics
-  { src: imgBFFBlack,    label: "Born From Fire — Black"    },
-  { src: imgBFFOffWhite, label: "Born From Fire — Off White" },
-  { src: imgBFFBurgundy, label: "Born From Fire — Burgundy"  },
-  { src: imgBTBLBlack,   label: "Born To Be Loud — Black"   },
-  { src: imgBTBLWhite,   label: "Born To Be Loud — White"   },
-  { src: imgBlackout,    label: "Blackout Collection"        },
   // Drop 2 — New Arrivals
   { src: imgDrop2_DoYouMissMeBlack, label: "Drop 2 — Do You Miss Me? — Black" },
   { src: imgDrop2_DoYouMissMeBoneWhite, label: "Drop 2 — Do You Miss Me? — Bone White" },
@@ -32,6 +25,13 @@ const heroImages = [
   { src: imgDrop2_StatementPieceBoneWhite, label: "Drop 2 — Statement Piece — Bone White" },
   { src: imgDrop2_LoveExamVintageBlack, label: "Drop 2 — Love Exam — Vintage Black" },
   { src: imgDrop2_LoveExamBurgundy, label: "Drop 2 — Love Exam — Burgundy" },
+  // Drop 1 — Classics
+  { src: imgBFFBlack,    label: "Born From Fire — Black"    },
+  { src: imgBFFOffWhite, label: "Born From Fire — Off White" },
+  { src: imgBFFBurgundy, label: "Born From Fire — Burgundy"  },
+  { src: imgBTBLBlack,   label: "Born To Be Loud — Black"   },
+  { src: imgBTBLWhite,   label: "Born To Be Loud — White"   },
+  { src: imgBlackout,    label: "Blackout Collection"        },
 ];
 
 const particles = Array.from({ length: 20 }, (_, i) => ({

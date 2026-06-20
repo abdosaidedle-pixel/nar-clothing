@@ -144,6 +144,29 @@ export default function Footer() {
           </p>
           <p className="text-xs tracking-[0.4em] text-muted-foreground uppercase">Not For Everyone</p>
         </div>
+
+        <div className="border-t border-border/20 pt-6 mt-6 flex flex-col items-center gap-1">
+          <p className="text-xs tracking-wide text-muted-foreground">
+            It was built by{" "}
+            <a
+              href="https://abdosaidedle-pixel.github.io/Portofolio-Abdo-main/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 font-semibold tracking-wider transition-colors"
+              data-testid="footer-built-by"
+            >
+              Abdosaid
+            </a>
+          </p>
+          <a
+            href="https://abdosaidedle-pixel.github.io/Portofolio-Abdo-main/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] tracking-[0.3em] text-muted-foreground hover:text-primary transition-colors uppercase"
+          >
+            Eng. Abdo Saeed — Portfolio
+          </a>
+        </div>
       </div>
     </footer>
   );
