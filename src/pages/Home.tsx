@@ -4,7 +4,8 @@ import HeroSection from "@/components/sections/HeroSection";
 import CollectionSection from "@/components/sections/CollectionSection";
 import DropSection from "@/components/sections/DropSection";
 import AboutSection from "@/components/sections/AboutSection";
-import ShowcaseSection from "@/components/sections/ShowcaseSection";
+import ShowcaseDrop1Section from "@/components/sections/ShowcaseDrop1Section";
+import ShowcaseDrop2Section from "@/components/sections/ShowcaseDrop2Section";
 import WhyNarSection from "@/components/sections/WhyNarSection";
 import GallerySection from "@/components/sections/GallerySection";
 import OrderSection from "@/components/sections/OrderSection";
@@ -41,7 +42,8 @@ export default function Home() {
         <CollectionSection />
         <DropSection />
         <AboutSection />
-        <ShowcaseSection />
+        <ShowcaseDrop1Section />
+        <ShowcaseDrop2Section />
         <WhyNarSection />
         <GallerySection />
         <OrderSection />
