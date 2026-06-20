@@ -9,8 +9,20 @@ import imgBFFBurgundy from "@assets/7caf832d-63cd-48b2-a49c-12b82cd814e0_1781286
 import imgBTBLBlack from "@assets/9d3a0bd0-d738-48f1-be9b-3e9651f9fcc3_1781286532075.png";
 import imgBTBLWhite from "@assets/6d2a65d8-3515-4327-8674-8f989f695ad6_1781286536554.png";
 import imgBlackout from "@assets/WhatsApp_Image_2026-06-12_at_5.33.58_PM_(1)_1781286541601.jpg";
+import imgDrop2_1 from "@assets/e7a67829-0b8b-460d-91e4-660bb1563255_1781346965222.jpg";
+import imgDrop2_2 from "@assets/88875a89-65c9-4db9-ae98-ef216e30cdbb_1781346969615.jpg";
+import imgDrop2_3 from "@assets/373b3391-7762-480e-a220-534e3d19d92b_1781346973584.jpg";
+import imgDrop2_4 from "@assets/8926290d-b8b3-4166-a83c-bae4bc9ac5cf_1781346996266.jpg";
+import imgDrop2_5 from "@assets/ec9fc131-3d6d-4079-a384-99851be3fce5_1781347004617.jpg";
 
 const heroImages = [
+  // Drop 2 — New Arrivals
+  { src: imgDrop2_1, label: "Drop 2 — Do You Miss Me? — Black" },
+  { src: imgDrop2_3, label: "Drop 2 — Do You Miss Me? — White" },
+  { src: imgDrop2_2, label: "Drop 2 — NAR Basic — Bone White" },
+  { src: imgDrop2_4, label: "Drop 2 — Love Exam — Vintage Black" },
+  { src: imgDrop2_5, label: "Drop 2 — Love Exam — Burgundy" },
+  // Drop 1 — Classics
   { src: imgBFFBlack,    label: "Born From Fire — Black"    },
   { src: imgBFFOffWhite, label: "Born From Fire — Off White" },
   { src: imgBFFBurgundy, label: "Born From Fire — Burgundy"  },

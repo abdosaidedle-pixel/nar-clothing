@@ -182,7 +182,10 @@ export default function ProductDetail() {
                     color === "Black" ? "#111" :
                     color === "Off White" ? "#E8E4DA" :
                     color === "Deep Red" ? "#8B0000" :
-                    color === "White" ? "#F2F2F2" : "#888";
+                    color === "White" ? "#F2F2F2" :
+                    color === "Bone White" ? "#F5F5DC" :
+                    color === "Vintage Black" ? "#2A2A2A" :
+                    color === "Burgundy" ? "#800020" : "#888";
                   return (
                     <motion.button
                       key={color}
