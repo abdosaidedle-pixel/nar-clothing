@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useMotionValue, useSpring } from "framer-motion";
-import imgDoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black.jpg";
-import imgDoYouMissMeBoneWhite from "@assets/drop2-do-you-miss-me-bone-white.jpg";
-import imgNarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white.jpg";
-import imgStatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white.jpg";
-import imgLoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black.jpg";
-import imgLoveExamBurgundy from "@assets/drop2-love-exam-burgundy.jpg";
+import imgDoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black-v2.png";
+import imgDoYouMissMeBoneWhite from "@assets/drop2-do-you-miss-me-bone-white-v2.png";
+import imgNarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white-v2.png";
+import imgStatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white-v2.png";
+import imgLoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black-v2.png";
+import imgLoveExamBurgundy from "@assets/drop2-love-exam-burgundy-v2.png";
 
 const images = [
   { src: imgDoYouMissMeBlack,       name: "Do You Miss Me? — Black" },
