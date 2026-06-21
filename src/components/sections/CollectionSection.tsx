@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import { motion } from "framer-motion";
-import { useMotionValue, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 // Drop 1
 import imgBFFBlack from "@assets/d3efa852-813a-43f6-bc6e-2a8d2b737f6c_1781286527273.png";
 import imgBFFOffWhite from "@assets/33ef5afe-ec2a-405c-be2f-c4786d17960c_1781286522480.png";
@@ -26,23 +26,27 @@ interface ShowcaseProduct {
   drop: string;
 }
 
-// First half: Drop 1 (3 products) — Born From Fire + Born To Be Loud + Blackout
-const drop1Products: ShowcaseProduct[] = [
-  { id: 1, slug: "born-from-fire-black",    name: "Born From Fire",  sub: "Black",    price: "EGP 650", image: imgBFFBlack,    drop: "Drop 001" },
-  { id: 4, slug: "born-to-be-loud-black",   name: "Born To Be Loud", sub: "Black",    price: "EGP 650", image: imgBTBLBlack,   drop: "Drop 001" },
-  { id: 6, slug: "blackout-collection",     name: "Blackout",        sub: "Black",    price: "EGP 650", image: imgBlackout,    drop: "Drop 001" },
+// Sequential list: Drop 1 first, then Drop 2
+const allProducts: ShowcaseProduct[] = [
+  // Drop 1 — 6 products
+  { id: 1, slug: "born-from-fire-black",    name: "Born From Fire",  sub: "Black",     price: "EGP 650", image: imgBFFBlack,    drop: "Drop 001" },
+  { id: 2, slug: "born-from-fire-offwhite", name: "Born From Fire",  sub: "Off White", price: "EGP 650", image: imgBFFOffWhite, drop: "Drop 001" },
+  { id: 3, slug: "born-from-fire-burgundy", name: "Born From Fire",  sub: "Burgundy",  price: "EGP 650", image: imgBFFBurgundy, drop: "Drop 001" },
+  { id: 4, slug: "born-to-be-loud-black",   name: "Born To Be Loud", sub: "Black",     price: "EGP 650", image: imgBTBLBlack,   drop: "Drop 001" },
+  { id: 5, slug: "born-to-be-loud-white",   name: "Born To Be Loud", sub: "White",     price: "EGP 650", image: imgBTBLWhite,   drop: "Drop 001" },
+  { id: 6, slug: "blackout-collection",     name: "Blackout",        sub: "Black",     price: "EGP 650", image: imgBlackout,    drop: "Drop 001" },
+  // Drop 2 — 6 products
+  { id: 7,  slug: "do-you-miss-me-black",        name: "Do You Miss Me?", sub: "Black",         price: "EGP 700", image: imgDrop2_DoYouMissMeBlack,        drop: "Drop 002" },
+  { id: 8,  slug: "nar-basic-bone-white",        name: "NAR Basic",       sub: "Bone White",    price: "EGP 700", image: imgDrop2_NarBasicBoneWhite,       drop: "Drop 002" },
+  { id: 9,  slug: "statement-piece-white",       name: "Statement Piece", sub: "Bone White",    price: "EGP 700", image: imgDrop2_StatementPieceBoneWhite, drop: "Drop 002" },
+  { id: 10, slug: "love-exam-vintage-black",     name: "Love Exam",       sub: "Vintage Black", price: "EGP 700", image: imgDrop2_LoveExamVintageBlack,    drop: "Drop 002" },
+  { id: 11, slug: "love-exam-burgundy",          name: "Love Exam",       sub: "Burgundy",      price: "EGP 700", image: imgDrop2_LoveExamBurgundy,        drop: "Drop 002" },
+  { id: 12, slug: "do-you-miss-me-white",        name: "Do You Miss Me?", sub: "Bone White",    price: "EGP 700", image: imgDrop2_DoYouMissMeBoneWhite,    drop: "Drop 002" },
 ];
 
-// Second half: Drop 2 (3 products) — one from each Drop 2 product line
-const drop2Products: ShowcaseProduct[] = [
-  { id: 7,  slug: "do-you-miss-me-black",        name: "Do You Miss Me?", sub: "Black",        price: "EGP 700", image: imgDrop2_DoYouMissMeBlack,        drop: "Drop 002" },
-  { id: 8,  slug: "nar-basic-bone-white",        name: "NAR Basic",       sub: "Bone White",   price: "EGP 700", image: imgDrop2_NarBasicBoneWhite,       drop: "Drop 002" },
-  { id: 10, slug: "love-exam-vintage-black",     name: "Love Exam",       sub: "Vintage Black",price: "EGP 700", image: imgDrop2_LoveExamVintageBlack,    drop: "Drop 002" },
-];
+const SLIDESHOW_INTERVAL_MS = 5000; // 5 seconds per slide
 
-const allProducts = [...drop1Products, ...drop2Products];
-
-function Card3D({ product, idx }: { product: ShowcaseProduct; idx: number }) {
+function SlideshowCard({ product }: { product: ShowcaseProduct }) {
   const [, setLocation] = useLocation();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -59,23 +63,18 @@ function Card3D({ product, idx }: { product: ShowcaseProduct; idx: number }) {
   const isDrop2 = product.drop === "Drop 002";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: idx * 0.08, duration: 0.6 }}
-      className="group flex flex-col gap-4 cursor-pointer"
-      onClick={() => setLocation(`/product/${product.slug}`)}
-    >
+    <div className="flex flex-col items-center gap-6 w-full">
+      {/* 3D Image Card */}
       <div
-        className="relative aspect-[3/4]"
+        className="relative aspect-[3/4] max-w-sm w-full cursor-pointer"
         style={{ perspective: "900px" }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={() => setLocation(`/product/${product.slug}`)}
       >
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-          className="w-full h-full relative border border-white/5 group-hover:border-white/15 transition-colors overflow-hidden bg-zinc-900/40"
+          className="w-full h-full relative border border-white/5 hover:border-white/15 transition-colors overflow-hidden bg-zinc-900/40"
         >
           <motion.img
             src={product.image}
@@ -88,37 +87,65 @@ function Card3D({ product, idx }: { product: ShowcaseProduct; idx: number }) {
             className="absolute inset-0 bg-gradient-to-br from-white/6 via-transparent to-black/20 pointer-events-none"
             style={{ rotateX, rotateY }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-5">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-end p-5">
             <button
               onClick={(e) => { e.stopPropagation(); setLocation(`/product/${product.slug}`); }}
               className="w-full bg-white text-black font-display text-lg py-3 uppercase hover:bg-primary hover:text-white transition-colors"
-              data-testid={`btn-view-${product.id}`}
             >
               View Product
             </button>
           </div>
-          <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(139,0,0,0.05)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(139,0,0,0.05)] opacity-0 hover:opacity-100 transition-opacity pointer-events-none" />
         </motion.div>
+        {/* Glow */}
+        <div className="absolute -inset-4 bg-primary/10 blur-3xl -z-10 rounded-full" />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <p className={`text-xs tracking-widest uppercase ${isDrop2 ? "text-primary" : "text-muted-foreground"}`}>{product.drop}</p>
-        <h3 className="font-display text-2xl uppercase group-hover:text-primary transition-colors">{product.name}</h3>
-        <div className="flex items-center justify-between">
-          <p className="text-muted-foreground text-sm tracking-widest uppercase">{product.sub}</p>
-          <p className="text-foreground font-mono text-sm">{product.price}</p>
-        </div>
+      {/* Product Info */}
+      <div className="flex flex-col items-center gap-1 text-center">
+        <p className={`text-xs tracking-widest uppercase ${isDrop2 ? "text-primary" : "text-muted-foreground"}`}>
+          {product.drop}
+        </p>
+        <h3 className="font-display text-3xl uppercase text-foreground">{product.name}</h3>
+        <p className="text-muted-foreground text-sm tracking-widest uppercase">{product.sub}</p>
+        <p className="text-foreground font-mono text-base mt-1">{product.price}</p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function CollectionSection() {
   const [, setLocation] = useLocation();
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-advance every 5 seconds (pause on hover)
+  useEffect(() => {
+    if (isPaused) return;
+    const id = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % allProducts.length);
+    }, SLIDESHOW_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [isPaused]);
+
+  const currentProduct = allProducts[activeIdx];
 
   return (
-    <section id="collection" className="py-24 bg-black relative z-10 border-t border-border/20">
-      <div className="container mx-auto px-6 md:px-12">
+    <section
+      id="collection"
+      className="py-24 bg-black relative z-10 border-t border-border/20 overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Background watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        <span className="font-display text-[20vw] text-white/[0.02] leading-none tracking-tighter whitespace-nowrap">
+          NAR
+        </span>
+      </div>
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
@@ -140,23 +167,70 @@ export default function CollectionSection() {
           </motion.button>
         </div>
 
-        {/* 6-card grid: 3 Drop 1 + 3 Drop 2 — 2 cols on sm, 3 on lg */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {allProducts.map((product, idx) => (
-            <Card3D key={product.id} product={product} idx={idx} />
-          ))}
+        {/* Slideshow — single product at a time */}
+        <div className="relative max-w-2xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentProduct.id}
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: -20 }}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <SlideshowCard product={currentProduct} />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Drop labels under the grid */}
-        <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 text-center">
-          <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-muted-foreground" />
-            <p className="text-xs tracking-[0.4em] text-muted-foreground uppercase">Drop 001 — First Half</p>
+        {/* Dot indicators + counter */}
+        <div className="mt-12 flex flex-col items-center gap-5">
+          {/* Counter */}
+          <p className="text-xs tracking-[0.4em] text-muted-foreground uppercase tabular-nums">
+            {String(activeIdx + 1).padStart(2, "0")} / {String(allProducts.length).padStart(2, "0")}
+            <span className="mx-3 text-border">|</span>
+            {currentProduct.drop === "Drop 001" ? "Drop 001 — Born From Fire" : "Drop 002 — Wear What They Think About"}
+          </p>
+
+          {/* Dot navigation */}
+          <div className="flex items-center gap-2 flex-wrap justify-center max-w-xl">
+            {allProducts.map((product, i) => (
+              <button
+                key={product.id}
+                onClick={() => setActiveIdx(i)}
+                aria-label={`Show product ${i + 1}: ${product.name}`}
+                className={`transition-all duration-300 rounded-full ${
+                  i === activeIdx
+                    ? "w-6 h-1.5 bg-primary"
+                    : "w-1.5 h-1.5 bg-white/25 hover:bg-white/50"
+                }`}
+              />
+            ))}
           </div>
-          <div className="hidden md:block w-px h-4 bg-border" />
-          <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            <p className="text-xs tracking-[0.4em] text-primary uppercase">Drop 002 — Second Half</p>
+
+          {/* Progress bar */}
+          <div className="w-full max-w-md h-[2px] bg-white/10 overflow-hidden rounded-full">
+            <motion.div
+              key={activeIdx + (isPaused ? "-paused" : "")}
+              initial={{ width: "0%" }}
+              animate={{ width: isPaused ? "0%" : "100%" }}
+              transition={{
+                duration: isPaused ? 0 : SLIDESHOW_INTERVAL_MS / 1000,
+                ease: "linear",
+              }}
+              className="h-full bg-primary"
+            />
+          </div>
+
+          {/* Legend */}
+          <div className="flex items-center gap-8 mt-2">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-muted-foreground" />
+              <p className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Drop 001</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <p className="text-[10px] tracking-[0.3em] text-primary uppercase">Drop 002</p>
+            </div>
           </div>
         </div>
       </div>
