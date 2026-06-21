@@ -110,7 +110,7 @@ export default function HeroSection() {
           className="text-muted-foreground hover:text-white transition-colors">
           <Facebook className="w-4 h-4" />
         </a>
-        <a href="https://www.tiktok.com/@nar_40400?_r=1&_t=ZS-979z8r4illt" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.tiktok.com/@nar.world.raw?_r=1&_t=ZS-97NnfhteDLx" target="_blank" rel="noopener noreferrer"
           className="text-muted-foreground hover:text-white transition-colors">
           <SiTiktok className="w-4 h-4" />
         </a>
