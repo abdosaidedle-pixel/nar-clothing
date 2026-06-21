@@ -1,23 +1,48 @@
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { useMotionValue, useSpring } from "framer-motion";
+// Drop 1
 import imgBFFBlack from "@assets/d3efa852-813a-43f6-bc6e-2a8d2b737f6c_1781286527273.png";
 import imgBFFOffWhite from "@assets/33ef5afe-ec2a-405c-be2f-c4786d17960c_1781286522480.png";
 import imgBFFBurgundy from "@assets/7caf832d-63cd-48b2-a49c-12b82cd814e0_1781286888023.png";
 import imgBTBLBlack from "@assets/9d3a0bd0-d738-48f1-be9b-3e9651f9fcc3_1781286532075.png";
 import imgBTBLWhite from "@assets/6d2a65d8-3515-4327-8674-8f989f695ad6_1781286536554.png";
 import imgBlackout from "@assets/WhatsApp_Image_2026-06-12_at_5.33.58_PM_(1)_1781286541601.jpg";
+// Drop 2 (new high-quality images)
+import imgDrop2_DoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black-v2.png";
+import imgDrop2_NarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white-v2.png";
+import imgDrop2_StatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white-v2.png";
+import imgDrop2_LoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black-v2.png";
+import imgDrop2_LoveExamBurgundy from "@assets/drop2-love-exam-burgundy-v2.png";
+import imgDrop2_DoYouMissMeBoneWhite from "@assets/drop2-do-you-miss-me-bone-white-v2.png";
 
-const products = [
-  { id: 1, slug: "born-from-fire-black",    name: "Born From Fire",    sub: "Black",    price: "EGP 650", image: imgBFFBlack,    drop: "Drop 001" },
-  { id: 2, slug: "born-from-fire-offwhite", name: "Born From Fire",    sub: "Off White", price: "EGP 650", image: imgBFFOffWhite, drop: "Drop 001" },
-  { id: 3, slug: "born-from-fire-burgundy", name: "Born From Fire",    sub: "Burgundy",  price: "EGP 650", image: imgBFFBurgundy, drop: "Drop 001" },
-  { id: 4, slug: "born-to-be-loud-black",   name: "Born To Be Loud",   sub: "Black",    price: "EGP 650", image: imgBTBLBlack,   drop: "Drop 001" },
-  { id: 5, slug: "born-to-be-loud-white",   name: "Born To Be Loud",   sub: "White",    price: "EGP 650", image: imgBTBLWhite,   drop: "Drop 001" },
-  { id: 6, slug: "blackout-collection",     name: "Blackout",          sub: "Black",    price: "EGP 650", image: imgBlackout,    drop: "Drop 001" },
+interface ShowcaseProduct {
+  id: number;
+  slug: string;
+  name: string;
+  sub: string;
+  price: string;
+  image: string;
+  drop: string;
+}
+
+// First half: Drop 1 (3 products) — Born From Fire + Born To Be Loud + Blackout
+const drop1Products: ShowcaseProduct[] = [
+  { id: 1, slug: "born-from-fire-black",    name: "Born From Fire",  sub: "Black",    price: "EGP 650", image: imgBFFBlack,    drop: "Drop 001" },
+  { id: 4, slug: "born-to-be-loud-black",   name: "Born To Be Loud", sub: "Black",    price: "EGP 650", image: imgBTBLBlack,   drop: "Drop 001" },
+  { id: 6, slug: "blackout-collection",     name: "Blackout",        sub: "Black",    price: "EGP 650", image: imgBlackout,    drop: "Drop 001" },
 ];
 
-function Card3D({ product, idx }: { product: typeof products[0]; idx: number }) {
+// Second half: Drop 2 (3 products) — one from each Drop 2 product line
+const drop2Products: ShowcaseProduct[] = [
+  { id: 7,  slug: "do-you-miss-me-black",        name: "Do You Miss Me?", sub: "Black",        price: "EGP 700", image: imgDrop2_DoYouMissMeBlack,        drop: "Drop 002" },
+  { id: 8,  slug: "nar-basic-bone-white",        name: "NAR Basic",       sub: "Bone White",   price: "EGP 700", image: imgDrop2_NarBasicBoneWhite,       drop: "Drop 002" },
+  { id: 10, slug: "love-exam-vintage-black",     name: "Love Exam",       sub: "Vintage Black",price: "EGP 700", image: imgDrop2_LoveExamVintageBlack,    drop: "Drop 002" },
+];
+
+const allProducts = [...drop1Products, ...drop2Products];
+
+function Card3D({ product, idx }: { product: ShowcaseProduct; idx: number }) {
   const [, setLocation] = useLocation();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -30,6 +55,8 @@ function Card3D({ product, idx }: { product: typeof products[0]; idx: number }) 
     mouseY.set(-(e.clientY - rect.top - rect.height / 2) / 10);
   };
   const handleMouseLeave = () => { mouseX.set(0); mouseY.set(0); };
+
+  const isDrop2 = product.drop === "Drop 002";
 
   return (
     <motion.div
@@ -75,7 +102,7 @@ function Card3D({ product, idx }: { product: typeof products[0]; idx: number }) 
       </div>
 
       <div className="flex flex-col gap-1">
-        <p className="text-xs text-muted-foreground tracking-widest uppercase">{product.drop}</p>
+        <p className={`text-xs tracking-widest uppercase ${isDrop2 ? "text-primary" : "text-muted-foreground"}`}>{product.drop}</p>
         <h3 className="font-display text-2xl uppercase group-hover:text-primary transition-colors">{product.name}</h3>
         <div className="flex items-center justify-between">
           <p className="text-muted-foreground text-sm tracking-widest uppercase">{product.sub}</p>
@@ -113,11 +140,24 @@ export default function CollectionSection() {
           </motion.button>
         </div>
 
-        {/* 6-card grid: 2 cols on sm, 3 on lg */}
+        {/* 6-card grid: 3 Drop 1 + 3 Drop 2 — 2 cols on sm, 3 on lg */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {products.map((product, idx) => (
+          {allProducts.map((product, idx) => (
             <Card3D key={product.id} product={product} idx={idx} />
           ))}
+        </div>
+
+        {/* Drop labels under the grid */}
+        <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 text-center">
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-muted-foreground" />
+            <p className="text-xs tracking-[0.4em] text-muted-foreground uppercase">Drop 001 — First Half</p>
+          </div>
+          <div className="hidden md:block w-px h-4 bg-border" />
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            <p className="text-xs tracking-[0.4em] text-primary uppercase">Drop 002 — Second Half</p>
+          </div>
         </div>
       </div>
     </section>

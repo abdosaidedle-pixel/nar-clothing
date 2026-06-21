@@ -10,12 +10,12 @@ import imgBTBLBlack from "@assets/9d3a0bd0-d738-48f1-be9b-3e9651f9fcc3_178128653
 import imgBTBLWhite from "@assets/6d2a65d8-3515-4327-8674-8f989f695ad6_1781286536554.png";
 import imgBlackout from "@assets/WhatsApp_Image_2026-06-12_at_5.33.58_PM_(1)_1781286541601.jpg";
 // Drop 2 - new high-quality product photos
-import imgDrop2_DoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black.jpg";
-import imgDrop2_DoYouMissMeBoneWhite from "@assets/drop2-do-you-miss-me-bone-white.jpg";
-import imgDrop2_NarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white.jpg";
-import imgDrop2_StatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white.jpg";
-import imgDrop2_LoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black.jpg";
-import imgDrop2_LoveExamBurgundy from "@assets/drop2-love-exam-burgundy.jpg";
+import imgDrop2_DoYouMissMeBlack from "@assets/drop2-do-you-miss-me-black-v2.png";
+import imgDrop2_DoYouMissMeBoneWhite from "@assets/drop2-do-you-miss-me-bone-white-v2.png";
+import imgDrop2_NarBasicBoneWhite from "@assets/drop2-nar-basic-bone-white-v2.png";
+import imgDrop2_StatementPieceBoneWhite from "@assets/drop2-statement-piece-bone-white-v2.png";
+import imgDrop2_LoveExamVintageBlack from "@assets/drop2-love-exam-vintage-black-v2.png";
+import imgDrop2_LoveExamBurgundy from "@assets/drop2-love-exam-burgundy-v2.png";
 
 const heroImages = [
   // Drop 2 — New Arrivals
